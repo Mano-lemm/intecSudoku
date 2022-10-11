@@ -4,16 +4,22 @@ import be.sudoku.utils.Utils;
 import be.sudoku.utils.Pair;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Random;
 
 public class SudokuField {
     Short[][] field;
+    Random rand;
 
     public SudokuField(){
+        rand = new Random();
         generateNewField();
     }
 
     private Boolean generateField(int x, int y){
-        Short[] available = getAvailable(x, y);
+        ArrayList<Short> available = getAvailable(x, y);
+        Collections.shuffle(available);
         Pair index = Utils.advanceIndex(x, y);
         for (Short shor : available) {
             field[x][y] = shor;
@@ -25,7 +31,7 @@ public class SudokuField {
         return false;
     }
 
-    private Short[] getAvailable(int x, int y) {
+    private ArrayList<Short> getAvailable(int x, int y) {
         ArrayList<Short> nums = Utils.allNums();
         ArrayList<Pair> indices = Utils.relevantIndices(x, y);
         for (Pair i : indices) {
@@ -33,7 +39,7 @@ public class SudokuField {
                 nums.remove(field[i.x][i.y]);
             }
         }
-        return nums.toArray(new Short[nums.size()]);
+        return nums;
     }
 
     private void generateNewField() {
@@ -46,8 +52,19 @@ public class SudokuField {
         generateField(0, 0);
     }
 
-    public void makePuzzle(){
-        //TODO: impl
+    public void makePuzzle(int difficulty){
+        HashSet<Pair> indices = new HashSet<>();
+        while(indices.size() < difficulty){
+            indices.add(new Pair((short) rand.nextInt(), (short) rand.nextInt()));
+        }
+
+        for (Pair pair : indices) {
+            field[pair.x][pair.y] = 0;
+        }
+    }
+
+    public Short getField(int x, int y){
+        return field[x][y];
     }
 
     @Override
@@ -60,10 +77,5 @@ public class SudokuField {
             s += "\n";
         }
         return s;
-    }
-
-    public static void main(String[] args) {
-        SudokuField f = new SudokuField();
-        System.out.println(f);
     }
 }
