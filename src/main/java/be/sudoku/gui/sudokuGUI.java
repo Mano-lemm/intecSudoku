@@ -51,6 +51,7 @@ public class sudokuGUI extends Application{
         r.setPrefHeight(Double.MAX_VALUE);
         r.setPrefWidth(Double.MAX_VALUE);
         String style = "";
+        style += "-fx-border-width: 0 0 1 1;";
         style += "-fx-border-color: black;";
         r.setStyle(style);
         return r;
