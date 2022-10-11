@@ -55,7 +55,7 @@ public class SudokuField {
     public void makePuzzle(int difficulty){
         HashSet<Pair> indices = new HashSet<>();
         while(indices.size() < difficulty){
-            indices.add(new Pair((short) rand.nextInt(), (short) rand.nextInt()));
+            indices.add(new Pair((short) rand.nextInt(9), (short) rand.nextInt(9)));
         }
 
         for (Pair pair : indices) {

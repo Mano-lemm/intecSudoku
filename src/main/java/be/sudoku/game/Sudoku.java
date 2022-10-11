@@ -19,8 +19,12 @@ public class Sudoku {
         game = new SudokuField();
     }    
 
+    public void newField(){
+        game = new SudokuField();
+    }
+
     public void setDifficulty(String difficulty){
-        switch (difficulty) {
+        switch (difficulty.toLowerCase()) {
             case "easy":
                 game.makePuzzle(EASY);
                 break;
