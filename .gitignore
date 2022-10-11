@@ -1,0 +1,7 @@
+target/*
+target/classes/be/sudoku/game/Sudoku.class
+target/classes/be/sudoku/game/SudokuField.class
+target/classes/be/sudoku/gui/sudokuGUI.class
+target/classes/be/sudoku/utils/Pair.class
+target/classes/be/sudoku/utils/Utils.class
+target/test-classes/be/sudoku/AppTest.class

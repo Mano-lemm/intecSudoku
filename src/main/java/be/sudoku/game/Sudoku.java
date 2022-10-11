@@ -11,6 +11,10 @@ public class Sudoku {
         return game.getField(x, y);
     }
 
+    public boolean setField(int x, int y, int val){
+        return game.setField(x, y, (short) val);
+    }
+
     public Sudoku(){
         game = new SudokuField();
     }    

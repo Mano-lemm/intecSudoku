@@ -63,8 +63,37 @@ public class SudokuField {
         }
     }
 
+    private Boolean isValid(int x, int y){
+        for (Pair pair : Utils.relevantIndices(x, y)) {
+            if(field[pair.x][pair.y] == field[x][y]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public Boolean isValidField(){
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field.length; j++) {
+                if(!isValid(i, j)){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public Short getField(int x, int y){
         return field[x][y];
+    }
+
+    public Boolean setField(int x, int y, Short val){
+        field[x][y] = val;
+        if(!isValid(x, y)){
+            field[x][y] = 0;
+            return false;
+        }
+        return true;
     }
 
     @Override
