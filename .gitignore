@@ -1,4 +1,5 @@
 target/
+*.class
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -11,3 +12,6 @@ buildNumber.properties
 
 # copied from Maven.gitignore -- baincd
 # sourced https://github.com/github/gitignore/blob/main/Maven.gitignore (11/10/2022)
+target/classes/be/sudoku/game/Sudoku.class
+target/classes/be/sudoku/game/SudokuField.class
+target/classes/be/sudoku/gui/sudokuGUI.class
