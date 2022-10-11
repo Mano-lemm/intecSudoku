@@ -47,7 +47,7 @@
 
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.sudoku.gui.sudokuGUI">
   <children>
-    <SplitPane dividerPositions="0.2" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0">
+    <SplitPane dividerPositions="0.2" focusTraversable="true" prefHeight="1000.0" prefWidth="1.0">
       <items>
         <AnchorPane prefHeight="577.0" prefWidth="136.0">
                <children>

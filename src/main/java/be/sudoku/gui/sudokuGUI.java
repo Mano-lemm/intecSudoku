@@ -74,6 +74,14 @@ public class sudokuGUI extends Application{
         return r;
     }
 
+    public void initGridChildren(){
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                grid.add(createItem(j, i), i, j);
+            }
+        }
+    }
+
     public void initGrid(){
         for (int i = 0; i < 9; i++) {
             ColumnConstraints col = new ColumnConstraints();
@@ -87,11 +95,7 @@ public class sudokuGUI extends Application{
             grid.getColumnConstraints().add(col);
             grid.getRowConstraints().add(row);
         }
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                grid.add(createItem(j, i), i, j);
-            }
-        }
+        initGridChildren();
     }
 
     public void initialize(){
@@ -102,7 +106,7 @@ public class sudokuGUI extends Application{
             game.newField();
             game.setDifficulty("medium");
             grid.getChildren().clear();
-            initGrid();
+            initGridChildren();
         });
     }
 
