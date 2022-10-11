@@ -7,6 +7,9 @@ public class Sudoku {
     private static final int MEDI = 30;
     private static final int HARD = 40;
 
+    public Short getField(int x, int y){
+        return game.getField(x, y);
+    }
 
     public Sudoku(){
         game = new SudokuField();
