@@ -1,3 +1,8 @@
+// most stable java
+// if it breaks, delete be.sudoku
+// type be.sudoku in its place after
+// wcyd
+
 module be.sudoku {
     requires transitive javafx.controls;
     requires javafx.fxml;
